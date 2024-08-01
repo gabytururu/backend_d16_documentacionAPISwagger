@@ -125,12 +125,17 @@ const options = {
             - Sigue la estrucdtura sugerida en los ejemplos para interactuar correctamente con la API.
         `,          
       },
-    //   security:[],
-      // servers: [
-      //   {
-      //     url: 'http://localhost:3000',
-      //   },
-      // ],
+      servers: [
+        //for testing purposes only -though makes no sense unless there is a full app.js codebase associated to this port+server as well.
+        // {
+        //     url: 'http://localhost:3000',
+        //     description:"dev"
+        // },
+        {
+            url: 'http://localhost:8080',
+            description:"production"
+        },
+      ],
     },
     apis: ['./src/docs/*.yaml'], 
   };
