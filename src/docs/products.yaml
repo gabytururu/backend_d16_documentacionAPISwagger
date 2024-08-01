@@ -75,7 +75,7 @@ paths:
           description: Argumentos inválidos o faltantes. El producto enviado contiene propiedades inválidas o faltantes.      
         '401':
           description: Error de autenticación. Debe existir un usuario loggeado para poder procesar esta petición   
-        '402':
+        '403':
           description: Credenciales Inválidas. El usuario no cuenta con suficientes privilegios para esta petición. 
         '500':  
           description: Error del servidor al ejecutar la petición.

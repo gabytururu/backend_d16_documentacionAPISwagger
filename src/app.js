@@ -19,6 +19,7 @@ import { errorHandler } from './middleware/errorHandler.js';
 import { loggerMiddleware, appLogger } from './utils/logger.js';
 import { appLoggerDTO } from './DTO/appLoggerDTO.js';
 import swaggerUi from 'swagger-ui-express'
+import { customAuth } from './middleware/auth.js';
 
 const PORT = config.PORT;
 const app = express();
@@ -49,7 +50,7 @@ app.set('views', path.join(__dirname,'/views'));
 
 app.use(express.static(path.join(__dirname,'/public')));
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/api-docs',customAuth(["public"]),swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use("/", vistasRouter)
 app.use("/api/products", productsRouter)

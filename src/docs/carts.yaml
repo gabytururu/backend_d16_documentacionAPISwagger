@@ -13,7 +13,11 @@ paths:
               schema: 
                 type: array
                 items: 
-                  $ref: '#components/schemas/Cart'  #ojo corregir aun no se ve OK
+                  $ref: '#components/schemas/Cart'  
+        '401':
+          description: Error de autenticación. Debe existir un usuario loggeado para procesar esta petición   
+        '403':
+          description: Credenciales Inválidas. El usuario no cuenta con suficientes privilegios para hacer esta petición. 
         '404':
           description: El sistema no logro ejecutar la petición ya que no encontro datos en la base + endpoint elegidos (no hay carritos)
         '500':  

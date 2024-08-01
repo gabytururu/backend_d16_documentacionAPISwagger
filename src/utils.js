@@ -7,6 +7,7 @@ import { config } from './config/config.js';
 import {fakerES_MX as faker} from '@faker-js/faker';
 import swaggerJsdoc from 'swagger-jsdoc'
 
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename)
 
@@ -109,8 +110,22 @@ const options = {
       info: {
         title: 'Ecommerce Documentation',
         version: '1.0.0',
-        description: 'Documentación de la API del Proyecto de Backend E-Commerce Coderhouse',
+        description: `
+            Documentación de la API del Proyecto de Backend E-Commerce Coderhouse
+            
+            Este documento contiene el detalle de los endpoints principales de la App. 
+
+            Authenticación:
+            - **Importante:** Para probar(try) la mayoría de los endpoints, el usuario debe estar registrado y loggeado.
+            - Utilza la pagina de login principal (home) para establecer una sesión. Una vez realizado lo anterior, puedes volver a esta documentación y testear los endpoints.
+            - Endpoints de modificación como PUT, POST, DELETE, y otros tantos como \`/api/carts\` retornarán 401 o 403 si no te has autenticado con las credenciales correctas.
+            
+            Uso:
+            - Puedes empezar testeando los endpoints públicos (ej. GET /products, GET /products/{pid}) y posteriormente, una vez que ya estés loggeado, probar los endpoints seguros.
+            - Sigue la estrucdtura sugerida en los ejemplos para interactuar correctamente con la API.
+        `,          
       },
+    //   security:[],
       // servers: [
       //   {
       //     url: 'http://localhost:3000',

@@ -51,15 +51,12 @@ components:
         products:
           type: array
           items:
-            qty:
-              type: number
-              description: unidades que se desean comprar del producto referido
-              $ref: '#components/schemas/Product'
-            # type: object
-            # properties:
-            #   qty:
-            #     type: number
-            #     description: unidades que se desean comprar del producto referido
-            #   $ref: '#components/schemas/Product'
-            
-          
+            type: object
+            properties:
+              pid: 
+                $ref: '#/components/schemas/Product'
+                # type: string
+                # description: reference to the product Id populated
+              qty:
+                type: number
+                description: cantidad de unidades del producto
